@@ -28,46 +28,55 @@ body {
 .top {
     margin-top: 0;
     background-image: url("../img/top.JPEG");
+    background-size: cover;
     width: 100vw;
-    height: 80vh;
-    text-align: center;
+    height: 80%;
     position: relative;
+    display: inline-block;
+    overflow: hidden;
 }
 
-/* .top-block {
-    position: relative;
-    width: 100vw;
-    text-align: center;
-} */
-
 .top-title {
-    position: absolute;
+    position: relative;
+    z-index: 1;
     width: 100vw;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .top-title h1 {
-    width: 100%;
-    padding: 5% 1%;
+    margin: 0;
+    width: auto;
+    max-width: 100%;
     color: var(--bg-color);
     font-family: "Noto Sans JP";
-    font-size: 10vw;
+    font-size: clamp(2rem, 8vw, 12rem);
     letter-spacing: 5rem;
+    margin-right: -5rem;
+    position: relative;
+    z-index: 1;
 }
 
 .top-txt {
-    top: 20%;
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* h1中央に配置 */
     width: 100vw;
-    height: auto;
-    padding: 1% 2%;
+    padding: 10px 0;
     background-color: var(--main-color);
+    z-index: 2;
+    /* h1の上に表示 */
 }
 
 .top-txt ul{
     display: flex;
-    gap: 7%;
+    flex-wrap: wrap;
+    gap: 2rem;
     justify-content: center;
+    align-items: center;
 }
 
 .top-txt ul p{
@@ -80,26 +89,82 @@ body {
 
 /* yarn-flower/////////////////////////// */
 .yarn-flower {
-    width: 100vw;
+    padding: 10% 0;
+    left: 50%;
     text-align: center;
-    margin-top: 50px;
+    display: block;
+    transform: rotateZ(0);
+    /* 回転の起点を中心に設定 */
+    transform-origin: center;
+    /* アニメーションの命令 */
+    animation: yarn-flowerAnime;
+    animation-timeline: view();
+    animation-range: contain;
 }
 
 .yarn-flower img {
-    width: 20%;
+    width: 25rem;
     height: auto;
 }
-.yarn-flower .autoRotate {
-    animation: autoRotateAnimation;
-    animation-timeline: view();
-}
-@keyframes outoRotateAnimation{
+
+@keyframes yarn-flowerAnime {
     from{
-        transform: rotate(0deg);
+        transform: rotateZ(0);
     }
-    to{
-        transform: rotate(360deg);
+
+    to {
+        transform: rotateZ(720deg);
     }
 }
 
-/* ideal/////////////////////////// */
+.middle {
+    margin-top: 20%;
+    width: 100vw;
+}
+
+.menu {
+    width: 98vw;
+    padding-left: 2vw;
+    position: sticky;
+    top: 50%;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sub-title{
+    margin: 0;
+    padding-left: 10.5%;
+}
+
+.sub-title h3{
+    align-self: stretch;
+    color: var(--main-color);
+    font-family: "Noto Sans JP";
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 117%; /* 23.4px */
+    letter-spacing: 4px;
+}
+
+.sub-title h2 {
+    align-self: stretch;
+    color: var(--main-color);
+    font-family: "Noto Sans JP";
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 117%; /* 28.08px */
+    letter-spacing: 4.8px;
+}
+
+.ideal {
+    margin: 0;
+    width: 100vw;
+    height: 1000px;
+}
+
+.yarn 
