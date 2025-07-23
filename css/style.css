@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-*{
+* {
     margin: 0;
     padding: 0;
     border: 0;
@@ -10,27 +10,32 @@
     list-style: none;
 }
 
-:root{
+:root {
     --main-color: #2078CA;
-    --secondary-color: #071847 ;
+    --secondary-color: #071847;
     --accent-color: #F992C9;
     --bg-color: #F9F5F1;
+    --scrollbar: 0;
 }
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
+    margin: 0;
     background-color: var(--bg-color);
+    overflow-x: hidden;
 }
 
-.top {
+
+#top {
     margin-top: 0;
     background-image: url("../img/top.JPEG");
     background-size: cover;
-    width: 100vw;
-    height: 80%;
+    width: calc(100vw - var(--scrollbar));
+    height: 80vh;
     position: relative;
     display: inline-block;
     overflow: hidden;
@@ -39,7 +44,7 @@ body {
 .top-title {
     position: relative;
     z-index: 1;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,14 +69,14 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     /* h1中央に配置 */
-    width: 100vw;
+    width: calc(100vw - var(--scrollbar));
     padding: 10px 0;
     background-color: var(--main-color);
     z-index: 2;
     /* h1の上に表示 */
 }
 
-.top-txt ul{
+.top-txt ul {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
@@ -79,7 +84,7 @@ body {
     align-items: center;
 }
 
-.top-txt ul p{
+.top-txt ul p {
     color: var(--bg-color);
     text-align: center;
     font-family: "Noto Sans JP";
@@ -88,8 +93,9 @@ body {
 }
 
 /* yarn-flower/////////////////////////// */
-.yarn-flower {
+#yarn-flower {
     padding: 10% 0;
+    width: calc(100vw - var(--scrollbar));
     left: 50%;
     text-align: center;
     display: block;
@@ -99,72 +105,328 @@ body {
     /* アニメーションの命令 */
     animation: yarn-flowerAnime;
     animation-timeline: view();
-    animation-range: contain;
+    /* animation-range: contain; */
 }
 
-.yarn-flower img {
+#yarn-flower img {
     width: 25rem;
     height: auto;
 }
 
 @keyframes yarn-flowerAnime {
-    from{
+    from {
         transform: rotateZ(0);
     }
 
     to {
-        transform: rotateZ(720deg);
+        transform: rotateZ(500deg);
     }
 }
 
-.middle {
-    margin-top: 20%;
-    width: 100vw;
+#middle {
+    margin-top: 10%;
+    width: calc(100vw - var(--scrollbar));
 }
 
-.menu {
-    width: 98vw;
-    padding-left: 2vw;
+/* menu ///////////////////////////////////////*/
+.nav-btn {
+    display: absolute;
     position: sticky;
+    margin: 0;
     top: 50%;
+    padding-left: calc(2vw - var(--scrollbar));
+    width: calc(98vw - var(--scrollbar));
+    z-index: 10;
+    background: transparent;
+    cursor: pointer;
 }
 
-.menu ul {
+.nav-btn ul {
     display: flex;
     justify-content: space-between;
 }
 
-.sub-title{
-    margin: 0;
-    padding-left: 10.5%;
+.nav-btn .minus-btn {
+    display: none;
+    opacity: 0;
 }
 
-.sub-title h3{
+.nav-btn .logo_menu {
+    display: none;
+    opacity: 0;
+}
+
+.nav {
+    position: fixed;
+    top: 45vh;
+    left: 0;
+    width: 100%;
+    height: 55vh;
+    background: var(--main-color);
+    clip-path: circle(0% at 3.5rem 5.5rem);
+    transition: clip-path 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 9;
+}
+
+.nav.active {
+    clip-path: circle(150% at 3.5rem 5.5rem);
+}
+
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.nav-list {
+    margin-top: -2%;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.nav-item {
+    opacity: 0;
+}
+
+.nav.active .nav-item {
+    opacity: 1;
+}
+
+.nav-link p{
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    overflow: hidden;
+    font-family: "Noto Sans JP";
+    font-weight: 700;
+    line-height: 117%; /* 1.4625rem */
+    letter-spacing: 0.5rem;
+    transition: .3s;
+}
+
+.nav-link p:hover{
+    transform: rotate(5deg);
+}
+
+/* honpen!!////////////////////////////// */
+#crochet {
+    width: calc(100vw - var(--scrollbar));
+}
+
+.sub-title {
+    margin: 0;
+    padding: 5% 10.5%;
+}
+
+.sub-title h3 {
     align-self: stretch;
-    color: var(--main-color);
     font-family: "Noto Sans JP";
     font-size: 2rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 117%; /* 23.4px */
+    line-height: 117%;
+    /* 23.4px */
     letter-spacing: 4px;
 }
 
 .sub-title h2 {
     align-self: stretch;
-    color: var(--main-color);
     font-family: "Noto Sans JP";
     font-size: 3rem;
     font-style: normal;
     font-weight: 500;
-    line-height: 117%; /* 28.08px */
+    line-height: 117%;
+    /* 28.08px */
     letter-spacing: 4.8px;
 }
 
-.ideal {
+/* ideal ////////////////////////////////////////*/
+#ideal {
+    height: 100vh;
+    width: calc(100vw - var(--scrollbar));
     margin: 0;
-    width: 100vw;
-    height: 1000px;
 }
 
-.yarn 
+#ideal .sub-title h3 {
+    color: var(--main-color);
+}
+
+#ideal .sub-title h2 {
+    color: var(--main-color);
+}
+
+/* yarn ////////////////////////////////////////*/
+.yarn-bg {
+    margin-left: -10vw;
+    width: calc(120vw - var(--scrollbar));
+    height: 150vh;
+    border-radius: 25%;
+    background: var(--main-color);
+    position: relative;
+}
+
+#yarn {
+    margin-top: -125vh;
+    height: 100vh;
+    width: calc(100vw - var(--scrollbar));
+    background-color: var(--main-color);
+    position: absolute;
+    z-index: 2;
+}
+
+#yarn .sub-title h3 {
+    color: var(--bg-color);
+}
+
+#yarn .sub-title h2 {
+    color: var(--bg-color);
+}
+
+#yarn p {
+    width: 46rem;
+    color: var(--bg-color);
+    text-align: center;
+    font-family: "Noto Sans JP";
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 215%;
+    /* 2.15rem */
+    letter-spacing: 0.2rem;
+    position: absolute;
+    z-index: 3;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#yarn img {
+    margin-top: -30%;
+    padding: 0 8% 0 8%;
+    width: 84%;
+    height: auto;
+    display: inline-block;
+    position: absolute;
+    z-index: 4;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
+    /* transition: .3s;
+    -webkit-transform: scale(1);
+    transform: scale(1); */
+}
+
+/* #yarn img:hover{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+} */
+
+#yarn .rumble:active {
+    display: inline-block;
+    animation: rumble 0.1s;
+}
+
+@keyframes rumble {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(0, 2px) rotate(5deg);
+    }
+
+    50% {
+        transform: translate(0, 0, 0);
+    }
+
+    75% {
+        transform: translate(0, -2px) rotate(-5deg);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* tool ////////////////////////////////////////*/
+#tool {
+    height: 100vh;
+    width: calc(100vw - var(--scrollbar));
+    margin-top: 10%;
+}
+
+#tool .sub-title h3 {
+    color: var(--main-color);
+}
+
+#tool .sub-title h2 {
+    color: var(--main-color);
+}
+
+.slider {
+    margin: 0;
+}
+
+.slider img {
+    margin: 0, auto;
+    width: 30rem;
+    height: 30rem;
+    border-radius: 100%;
+    filter: drop-shadow(5px 5px 5px #aaa);
+}
+
+.slider h2 {
+    margin: 0;
+    padding-top: 15%;
+    align-self: stretch;
+    color: var(--secondary-color);
+    text-align: center;
+    font-family: "Noto Sans JP";
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 86%;
+    /* 1.29rem */
+    letter-spacing: 0.18rem;
+}
+
+.slider p {
+    margin: 0;
+    padding-top: 10%;
+    width: 27rem;
+    color: var(--secondary-color);
+    text-align: center;
+    font-family: "Noto Sans JP";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.5rem;
+    /* 250% */
+    letter-spacing: 0.12rem;
+}
+
+/* column ////////////////////////////////////////*/
+#column {
+    height: 100vh;
+    width: calc(100vw - var(--scrollbar));
+    margin-top: 10%;
+}
+
+#column .sub-title h3 {
+    color: var(--main-color);
+
+}
+
+#column .sub-title h2 {
+    color: var(--main-color);
+}
+
+

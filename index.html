@@ -7,11 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="これはテストサイトです" />
 
+    <link rel="stylesheet" href="./slick/slick.css">
+    <link rel="stylesheet" href="./slick/slick-theme.css">
     <link rel="stylesheet" href="./css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/slick.min.js"></script>
+    <script src="./js/script.js"></script>
 </head>
 
 <body>
-    <div class="top">
+    <div id="top">
         <div class="top-title">
             <h1>LIGHTHOUSE</h1>
             <div class="top-txt">
@@ -34,34 +40,118 @@
         </div>
     </div>
 
-    <div class="yarn-flower">
+    <div id="yarn-flower">
         <figure>
             <img src="./img/yarn-flower.svg" alt="" class="autoRotate">
         </figure>
     </div>
 
-    <div class="middle">
-        <div class="menu">
+    <div id="middle">
+        <div  class="nav-btn" aria-controls="menu" aria-expanded="false">
             <ul>
-                <li class="plus-bottun"><img src="./img/plus.svg"></li>
-                <li class="logo"><img src="./img/LIGHT HOUSE.svg"></li>
+                <li class="plus/minus-btn">
+                    <button class="plus-btn"><img src="./img/plus.svg"></button>
+                    <button class="minus-btn"><img src="./img/minus.svg"></button>
+                </li>
+                <li class="logo">
+                    <img src="./img/LIGHT HOUSE.svg" class="logo_df">
+                    <img src="./img/LIGHT HOUSE_2.svg" class="logo_menu">
+                </li>
             </ul>
         </div>
+        <nav id="menu" class="nav" aria-hidden="ture">
+            <div class="nav-wrapper">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#1" class="nav-link"><p>IDEAL</p></a></li>
+                    <li class="nav-item"><a href="#2" class="nav-link"><p>YARN</p></a></li>
+                    <li class="nav-item"><a href="#3" class="nav-link"><p>TOOL</p></a></li>
+                    <li class="nav-item"><a href="#4" class="nav-link"><p>COLUMN</p></a></li>
+                </ul>
+            </div>
+        </nav>
 
-        <div class="ideal">
-            <div class="sub-title">
-                <h3>IDEAL</h3>
-                <h2>つくりたいものに出会おう</h2>
+        <div id="crochet">
+
+            <div id="ideal">
+                <a name="1"></a>
+                <div class="sub-title">
+                    <h3>IDEAL</h3>
+                    <h2>つくりたいものに出会おう</h2>
+                </div>
+
             </div>
 
-        </div>
+            <div class="yarn-bg"></div>
+            <div id="yarn">
+                <a name="2"></a>
+                <div class="sub-title">
+                    <h3>YARN</h3>
+                    <h2>理想の糸に出会おう</h2>
+                </div>
 
-        <div class="yarn">
-            <div class="sub-title">
-                <h3>YARN</h3>
-                <h2>理想の糸に出会おう</h2>
+                <div class="text">
+                    <p>これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。
+                    </p>
+                </div>
+
+                <img src="./img/yarn.svg" alt="" class="rumble">
             </div>
 
+            <div id="tool">
+                <a name="3"></a>
+                <div class="sub-title">
+                    <h3>TOOL</h3>
+                    <h2>愛着は編み道具からも</h2>
+                </div>
+
+                <div class="slider slick">
+                    <div>
+                        <img src="./img/IMG_5568.JPEG" alt="measure" class="imgauto">
+                        <h2 class="slider-tool">メジャー</h2>
+                        <p class="slider-txt">
+                            これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。
+                        </p>
+                    </div>
+                    <div>
+                        <img src="./img/IMG_5572.JPEG" alt="needle" class="imgauto">
+                        <h2 class="slider-tool">とじ針</h2>
+                        <p class="slider-txt">
+                            これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。
+                        </p>
+                    </div>
+                    <div>
+                        <img src="./img/IMG_5583.JPEG" alt="hook" class="imgauto">
+                        <h2 class="slider-tool">かぎ針</h2>
+                        <p class="slider-txt">
+                            これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。
+                        </p>
+                    </div>
+                    <div>
+                        <img src="./img/IMG_5575.JPEG" alt="stitch-marker" class="imgauto">
+                        <h2 class="slider-tool">ステッチマーカー</h2>
+                        <p class="slider-txt">
+                            これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。
+                        </p>
+                    </div>
+                    <div>
+                        <img src="./img/IMG_5581.JPEG" alt="case" class="imgauto">
+                        <h2 class="slider-tool">かぎ針ケース</h2>
+                        <p class="slider-txt">
+                            これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。これはダミーテキストです。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="column">
+                <a name="4"></a>
+                <div class="sub-title">
+                    <h3>COLUMN</h3>
+                    <h2>編み物は“編む”だけじゃない！</h2>
+                </div>
+
+
+            </div>
         </div>
     </div>
 </body>
