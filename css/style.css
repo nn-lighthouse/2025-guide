@@ -129,7 +129,7 @@ body {
 }
 
 /* menu ///////////////////////////////////////*/
-.nav-btn {
+.nav-icon {
     display: absolute;
     position: sticky;
     margin: 0;
@@ -141,17 +141,17 @@ body {
     cursor: pointer;
 }
 
-.nav-btn ul {
+.nav-icon ul {
     display: flex;
     justify-content: space-between;
 }
 
-.nav-btn .minus-btn {
+.nav-icon .minus-btn {
     display: none;
     opacity: 0;
 }
 
-.nav-btn .logo_menu {
+.nav-icon .logo_menu {
     display: none;
     opacity: 0;
 }
@@ -199,7 +199,7 @@ body {
     opacity: 1;
 }
 
-.nav-link p{
+.nav-link p {
     position: relative;
     display: inline-block;
     font-size: 2rem;
@@ -208,12 +208,13 @@ body {
     overflow: hidden;
     font-family: "Noto Sans JP";
     font-weight: 700;
-    line-height: 117%; /* 1.4625rem */
+    line-height: 117%;
+    /* 1.4625rem */
     letter-spacing: 0.5rem;
     transition: .3s;
 }
 
-.nav-link p:hover{
+.nav-link p:hover {
     transform: rotate(5deg);
 }
 
@@ -264,6 +265,110 @@ body {
     color: var(--main-color);
 }
 
+#ideal .caption img {
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    max-width: 15%;
+    flex-shrink: 0;
+}
+
+#ideal .caption h3 {
+    color: var(--secondary-color);
+    font-family: "IBM Plex Sans JP";
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 250%;
+    /* 3.75rem */
+}
+
+#ideal .caption p {
+    color: var(--secondary-color);
+    text-align: justify;
+    font-family: "Noto Sans JP";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 220%;
+    /* 2.15rem */
+    letter-spacing: 0.2rem;
+    margin: 0 auto;
+    max-width: 22rem;
+    width: 100%;
+}
+
+#ideal .YouTube {
+    position: relative;
+    margin: 0 auto;
+    margin-top: -2%;
+    padding: 0 0 0 23%;
+
+    img{
+        position: absolute;
+        margin: 0;
+    }
+
+    h3 {
+        position: absolute;
+        padding-right: 20%;
+        padding-top: 2%;
+    }
+
+    p {
+        position: absolute;
+        padding-left: 8%;
+        padding-top: 8%;
+    }
+}
+
+#ideal .Book {
+    position: relative;
+    margin: 0 auto;
+    padding: 5% 0 0 65%;
+
+    img{
+        position: absolute;
+        margin: 0 auto;
+    }
+
+    h3 {
+        margin: 0 auto;
+        position: absolute;
+        padding-left: 12%;
+        padding-top: 2%;
+    }
+
+    p {
+        position: absolute;
+        padding-left: -16%;
+        padding-top: 8%;
+    }
+}
+
+#ideal .SNS {
+    position: relative;
+    margin: 0 auto;
+    padding: 14% 47% 0 35%;
+
+    img{
+        position: absolute;
+        margin: 0;
+    }
+
+    h3 {
+        position: absolute;
+        padding-right: 12%;
+        padding-top: 3%;
+    }
+
+    p {
+        position: absolute;
+        padding-left: 8%;
+        padding-top: 8%;
+    }
+}
+
 /* yarn ////////////////////////////////////////*/
 .yarn-bg {
     margin-left: -10vw;
@@ -292,7 +397,8 @@ body {
 }
 
 #yarn p {
-    width: 46rem;
+    max-width: 46rem;
+    width: 100%;
     color: var(--bg-color);
     text-align: center;
     font-family: "Noto Sans JP";
@@ -311,23 +417,30 @@ body {
 }
 
 #yarn img {
-    margin-top: -30%;
-    padding: 0 8% 0 8%;
-    width: 84%;
-    height: auto;
+    width: 100%;
     display: inline-block;
     position: absolute;
     z-index: 4;
     filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
-    /* transition: .3s;
-    -webkit-transform: scale(1);
-    transform: scale(1); */
 }
 
-/* #yarn img:hover{
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-} */
+#yarn .yarn1 {
+    padding: 0 8% 0 8%;
+    margin: 0 auto;
+    margin-top: -32%;
+    max-width: 15rem;
+    z-index: 5;
+}
+
+#yarn .yarn2 {
+    padding: 0 10% 0 10%;
+    margin: 0 auto;
+    text-align: center;
+    top: 0;
+    max-width: 118rem;
+    z-index: 6;
+}
+
 
 #yarn .rumble:active {
     display: inline-block;
@@ -372,7 +485,7 @@ body {
 }
 
 .slider {
-    margin: 0;
+    margin: 0 auto;
 }
 
 .slider img {
@@ -392,16 +505,22 @@ body {
     font-family: "Noto Sans JP";
     font-size: 2rem;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 86%;
     /* 1.29rem */
     letter-spacing: 0.18rem;
 }
 
+.slider-tool span {
+    background: linear-gradient(transparent 50%, #AEC4E3 50%);
+    padding: 0 0.3em;
+}
+
 .slider p {
-    margin: 0;
+    margin: 0 auto;
     padding-top: 10%;
-    width: 27rem;
+    max-width: 27rem;
+    width: 100%;
     color: var(--secondary-color);
     text-align: center;
     font-family: "Noto Sans JP";
@@ -428,5 +547,3 @@ body {
 #column .sub-title h2 {
     color: var(--main-color);
 }
-
-
