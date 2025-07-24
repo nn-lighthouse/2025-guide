@@ -373,14 +373,14 @@ body {
 .yarn-bg {
     margin-left: -10vw;
     width: calc(120vw - var(--scrollbar));
-    height: 150vh;
+    height: 120vh;
     border-radius: 25%;
     background: var(--main-color);
     position: relative;
 }
 
 #yarn {
-    margin-top: -125vh;
+    margin-top: -110vh;
     height: 100vh;
     width: calc(100vw - var(--scrollbar));
     background-color: var(--main-color);
@@ -427,7 +427,7 @@ body {
 #yarn .yarn1 {
     padding: 0 8% 0 8%;
     margin: 0 auto;
-    margin-top: -32%;
+    margin-top: -28%;
     max-width: 15rem;
     z-index: 5;
 }
@@ -436,7 +436,7 @@ body {
     padding: 0 10% 0 10%;
     margin: 0 auto;
     text-align: center;
-    top: 0;
+    top: 50;
     max-width: 118rem;
     z-index: 6;
 }
